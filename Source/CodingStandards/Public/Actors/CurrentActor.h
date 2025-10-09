@@ -3,8 +3,8 @@
 
 //# [basic.language]
 //# Use US English for all names and comments
-//#  BAD -> FColor SpecialisedColour;
-//#  GOOD -> FColor SpecializedColor;
+//# BAD -> FColor SpecialisedColour;
+//# GOOD -> FColor SpecializedColor;
 
 //# [header.copyright]
 //# Leave default copyright notice on top
