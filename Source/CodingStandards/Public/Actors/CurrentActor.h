@@ -6,11 +6,10 @@
 //# BAD -> FColor SpecialisedColour;
 //# GOOD -> FColor SpecializedColor;
 
-//# [header.copyright]
-//# Leave default copyright notice on top
+//# [header.copyright] Leave default copyright notice on top
 // Fill out your copyright notice in the Description page of Project Settings.
 
-//# [header.guard] always add #pragma once on top
+//# [header.guard] Always add '#pragma once' on top
 #pragma once
 
 //# [header.include.core] CoreMinimal.h is always listed on top
@@ -20,8 +19,10 @@
 #include <GameFramework/Actor.h>
 
 //# [header.include.project] All Project files should use quotes
-//# [header.include.path] Use full relative path
-// #include "Actors/OtherActor.h"
+//# [header.include.path] Use full relative path for includes
+// BAD-> #include <OtherActor.h>
+// BAD-> #include "OtherActor.h"
+// GOOD -> #include "Actors/OtherActor.h"
 
 //# [header.include.generated] generated.h must be last in include list
 #include "CurrentActor.generated.h"
@@ -29,6 +30,7 @@
 //# [header.include.settings]
 //# Include sorting handled by clang-format
 //# Brackets and Path rules could be enforced via rider settings
+//# Make sure to set up both of them
 
 //# [header.fwd] Prefer to use forward declaration if possible
 class AOtherActor;
@@ -43,7 +45,7 @@ DEFINE_LOG_CATEGORY_STATIC(LogCurrentActor, All, All);
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnHiddenInGame, AActor*, This, bool, bIsHidden);
 
-//# [comment.doxygen] use /// comments for classes, functions, and variables descriptions to generate Doxygen documentation
+//# [comment.doxygen] Use /// comments for classes, functions, and variables descriptions to generate Doxygen documentation
 /// ACurrentActor is used as an example of coding standards
 UCLASS()
 class UE_API ACurrentActor : public AActor
