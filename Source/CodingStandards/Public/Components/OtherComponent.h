@@ -8,7 +8,7 @@
 
 
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
-class CODINGSTANDARDS_API UOtherComponent : public UActorComponent
+class UOtherComponent : public UActorComponent
 {
 	GENERATED_BODY()
 

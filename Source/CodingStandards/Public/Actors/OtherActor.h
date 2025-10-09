@@ -7,7 +7,7 @@
 #include "OtherActor.generated.h"
 
 UCLASS()
-class CODINGSTANDARDS_API AOtherActor : public AActor
+class AOtherActor : public AActor
 {
 	GENERATED_BODY()
 

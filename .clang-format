@@ -55,12 +55,14 @@ UseTab: Always
 SortIncludes: CaseSensitive
 IncludeBlocks: Regroup
 IncludeCategories: 
-  - Regex: '<.*>'
+  - Regex: '<CoreMinimal.h>'
     Priority: 1
-  - Regex: '"[a-zA-Z0-9\/\_\\\-]*.h"'
+  - Regex: '<.*>'
     Priority: 2
-  - Regex: '"[a-zA-Z0-9\/\_\\]*.generated.h"'
+  - Regex: '"[a-zA-Z0-9\/\_\\\-]*.h"'
     Priority: 3
-  - Regex: 'UE_INLINE_GENERATED_CPP_BY_NAME.*\)'
+  - Regex: '"[a-zA-Z0-9\/\_\\]*.generated.h"'
     Priority: 4
+  - Regex: 'UE_INLINE_GENERATED_CPP_BY_NAME.*\)'
+    Priority: 5
 
