@@ -31,6 +31,10 @@ public:
 	virtual void SetActorHiddenInGame(bool bNewHidden) override;
 	//~ End AActor
 
+	//~ Begin UObject
+	virtual void PostInitProperties() override;
+	//~ End UObject
+	
 protected:
 	//~ Begin AActor
 	/** The comment should explain why the function was overridden or what it does  */
