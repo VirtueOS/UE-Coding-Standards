@@ -9,4 +9,6 @@ This documentation is inspired by the [SplashDamage Coding Standards](https://gi
 The project includes both C++ and Blueprint standards  
 - For C++ documentation see [CurrentActor.h](https://github.com/RadYarn/Coding-Standards/blob/main/Source/CodingStandards/Public/Actors/CurrentActor.h)/[cpp](https://github.com/RadYarn/Coding-Standards/blob/main/Source/CodingStandards/Private/Actors/CurrentActor.cpp)  
 - For BP navigate to Content/ folder of the plugin
-Also there's Settings/ folder with Rider setup guide
+
+Also there's Settings/ folder with
+- [Rider setup guide](https://github.com/RadYarn/Coding-Standards/tree/main/Settings/Rider)
