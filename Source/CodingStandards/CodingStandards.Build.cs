@@ -19,6 +19,7 @@ public class CodingStandards : ModuleRules
 			new string[]
 			{
 				"CoreUObject",
+				"NetCore",
 				"Engine",
 				"Slate",
 				"SlateCore",
