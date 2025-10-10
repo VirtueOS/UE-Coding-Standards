@@ -20,9 +20,9 @@
 
 //# [header.include.project] All Project files should use quotes
 //# [header.include.path] Use full relative path for includes
-// BAD-> #include <OtherActor.h>
-// BAD-> #include "OtherActor.h"
-// GOOD -> #include "Actors/OtherActor.h"
+//# BAD-> #include <OtherActor.h>
+//# BAD-> #include "OtherActor.h"
+//# GOOD -> #include "Actors/OtherActor.h"
 
 //# [header.include.generated] generated.h must be last in include list
 #include "CurrentActor.generated.h"
