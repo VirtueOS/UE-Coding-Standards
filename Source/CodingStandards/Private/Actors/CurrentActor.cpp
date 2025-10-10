@@ -2,6 +2,9 @@
 
 #include "Actors/CurrentActor.h"
 
+#include <Net/Core/PushModel/PushModel.h>
+#include <Net/UnrealNetwork.h>
+
 #if WITH_EDITOR
 #include <Misc/DataValidation.h>
 #endif
@@ -11,6 +14,17 @@
 ACurrentActor::ACurrentActor(const FObjectInitializer& ObjectInitializer)
 {
 	PrimaryActorTick.bCanEverTick = false;
+}
+
+void ACurrentActor::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	//# [replication.push] Prefer to use PushBased
+	FDoRepLifetimeParams SharedParams;
+	SharedParams.bIsPushBased = true;
+
+	DOREPLIFETIME_WITH_PARAMS_FAST(ThisClass, OtherComponent, SharedParams);
 }
 
 void ACurrentActor::SetActorHiddenInGame(const bool bNewHidden)
@@ -42,7 +56,12 @@ void ACurrentActor::BeginPlay()
 
 void ACurrentActor::SetOtherComponent(UOtherComponent* NewOtherComponent)
 {
-	OtherComponent = NewOtherComponent;
+	if (HasAuthority())
+	{
+		OtherComponent = NewOtherComponent;
+		//# [replication.push.dirty] Don't forget to manually mark property dirty for PushBased replication
+		MARK_PROPERTY_DIRTY_FROM_NAME(ACurrentActor, OtherComponent, this);
+	}
 }
 
 void ACurrentActor::OnRep_OtherComponent()

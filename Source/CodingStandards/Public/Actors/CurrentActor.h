@@ -118,10 +118,10 @@ protected:
 	UPROPERTY(EditAnywhere, Category = Components, ReplicatedUsing = "OnRep_OtherComponent")
 	TObjectPtr<UOtherComponent> OtherComponent = nullptr;
 
-	//# [float] always add .0f
+	//# [basic.float] always add .0f
 	float Speed = 0.0f;
 
-	//# [bool] should start with 'b' followed by modal verb (Can, Does, Will, Is, Has, ...)
+	//# [basic.bool] should start with 'b' followed by modal verb (Can, Does, Will, Is, Has, ...)
 	bool bIsInitialized = false;
 };
 
