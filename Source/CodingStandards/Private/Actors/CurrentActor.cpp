@@ -77,4 +77,6 @@ void ACurrentActor::SetOtherComponent(UOtherComponent* NewOtherComponent)
 
 void ACurrentActor::OnRep_OtherComponent()
 {
+	//# [comment.todo] If you are leaving a TODO comment, consider creating and linking a task to this comment
+	// TODO: [CU-12345] Attach new component if it's a SceneComponent
 }
