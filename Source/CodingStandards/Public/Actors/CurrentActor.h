@@ -41,8 +41,6 @@ class UOtherComponent;
 //# Don't forget to undef it at the bottom of the file
 #define UE_API CODINGSTANDARDS_API
 
-DEFINE_LOG_CATEGORY_STATIC(LogCurrentActor, All, All);
-
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnHiddenInGame, AActor*, This, bool, bIsHidden);
 
 //# [comment.doxygen] Use /// comments for classes, functions, and variables descriptions to generate Doxygen documentation
@@ -74,6 +72,8 @@ public:
 public:
 	//# [comment.override] Mark override sections with //~ Begin/End CLASS_NAME
 	//~ Begin AActor
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+	
 	virtual void SetActorHiddenInGame(bool bNewHidden) override;
 	//~ End AActor
 

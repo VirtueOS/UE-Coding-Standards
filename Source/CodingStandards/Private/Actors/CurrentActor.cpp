@@ -9,7 +9,10 @@
 #include <Misc/DataValidation.h>
 #endif
 
+//# [include.inline] Always add UE_INLINE_GENERATED_CPP_BY_NAME in cpp
 #include UE_INLINE_GENERATED_CPP_BY_NAME(CurrentActor)
+
+DEFINE_LOG_CATEGORY_STATIC(LogCurrentActor, All, All);
 
 ACurrentActor::ACurrentActor(const FObjectInitializer& ObjectInitializer)
 {
@@ -34,6 +37,8 @@ void ACurrentActor::SetActorHiddenInGame(const bool bNewHidden)
 	OnHiddenInGame.Broadcast(this, bNewHidden);
 }
 
+//# [function.useless]
+//# Remove functions that serve no purpose and only call their parent implementations
 void ACurrentActor::PostInitProperties()
 {
 	Super::PostInitProperties();
@@ -50,12 +55,18 @@ EDataValidationResult ACurrentActor::IsDataValid(class FDataValidationContext& C
 void ACurrentActor::BeginPlay()
 {
 	Super::BeginPlay();
-
+	
 	Speed = 1.0f;
 }
 
 void ACurrentActor::SetOtherComponent(UOtherComponent* NewOtherComponent)
 {
+	//# [if.guard] Prefer to use guard clause, but a regular if is acceptable for a single level of nesting
+	if (OtherComponent || !NewOtherComponent)
+	{ //# [if.braces] Always use braces, even for single-line statements
+		return;
+	}
+		
 	if (HasAuthority())
 	{
 		OtherComponent = NewOtherComponent;
