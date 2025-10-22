@@ -115,6 +115,7 @@ protected:
 	UPROPERTY()
 	TArray<TWeakObjectPtr<AOtherActor>> RelevantActors;
 
+	//# [basic.defaults] If UPROPERTY marked with EditDefaultsOnly/EditAnywhere, then it should have Category specified 
 	UPROPERTY(EditAnywhere, Category = Components, ReplicatedUsing = "OnRep_OtherComponent")
 	TObjectPtr<UOtherComponent> OtherComponent = nullptr;
 
