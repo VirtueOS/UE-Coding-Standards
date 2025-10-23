@@ -1,4 +1,4 @@
-### You could manually enable settings instead of importing full settings.zip:
+### You can manually enable settings instead of importing full settings.zip:
 
 1. Settings -> Editor -> Code Style -> C/C++ -> General tab -> Set 'C/C++ formatting engine' to 'ClangFormat'  
 P.S. set executable to either Bundled or Custom (you can find clang-format.exe at CI/ClangFormat)  
