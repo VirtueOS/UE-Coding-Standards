@@ -74,7 +74,7 @@ public:
 	//# [comment.override] Mark override sections with //~ Begin/End CLASS_NAME
 	//~ Begin AActor
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
-	
+
 	virtual void SetActorHiddenInGame(bool NewHidden) override;
 	//~ End AActor
 
@@ -92,10 +92,14 @@ protected:
 	/// BAD -> Overrides BeginPlay of AActor
 	virtual void BeginPlay() override;
 	//~ End AActor
-	
+
 	//# [basic.delegate.handler] Delegate Handler function name should start with Handle
 	UFUNCTION()
-	void HandleActorHiddenInGame(AActor* Actor, bool IsHidden) {};
+	void HandleActorHiddenInGame(AActor* Actor, bool IsHidden) {}
+
+	//# [function.out]
+	// Parameters that are passed by non-const ref and expected to be changed during execution should be prefixed with Out
+	void FindHitResult(FHitResult& OutHitResult) const;
 
 	//# 4. Getters/Setters
 public:
@@ -120,12 +124,12 @@ protected:
 	UPROPERTY()
 	TArray<TWeakObjectPtr<AOtherActor>> RelevantActors;
 
-	//# [basic.defaults] If UPROPERTY marked with EditDefaultsOnly/EditAnywhere, then it should have Category specified 
+	//# [basic.defaults] If UPROPERTY marked with EditDefaultsOnly/EditAnywhere, then it should have Category specified
 	UPROPERTY(EditAnywhere, Category = Components, ReplicatedUsing = "OnRep_OtherComponent")
 	TObjectPtr<UOtherComponent> OtherComponent = nullptr;
 
 	//# [basic.float] always add .0f
-	float Speed = 0.0f;
+	float Speed = 1.0f;
 
 	//# [basic.bool] should start with modal verb (Can, Does, Will, Is, Has, ...)
 	bool IsInitialized = false;

@@ -55,10 +55,17 @@ EDataValidationResult ACurrentActor::IsDataValid(class FDataValidationContext& C
 void ACurrentActor::BeginPlay()
 {
 	Super::BeginPlay();
-	
-	Speed = 1.0f;
 
 	OnHiddenInGame.AddDynamic(this, &ACurrentActor::HandleActorHiddenInGame);
+}
+
+void ACurrentActor::FindHitResult(FHitResult& OutHitResult) const
+{
+	//# [basic.magic] Avoid using meaningless numbers. Wrap it with meaningful variable
+	//# [basic.constexpr] Prefer to use constexpr when possible
+	constexpr float MaxSpeed = 10.0f;
+	OutHitResult = FHitResult(MaxSpeed);
+	//# BAD -> OutHitResult = FHitResult(10.0f);
 }
 
 void ACurrentActor::SetOtherComponent(UOtherComponent* NewOtherComponent)
@@ -68,7 +75,7 @@ void ACurrentActor::SetOtherComponent(UOtherComponent* NewOtherComponent)
 	{ //# [if.braces] Always use braces, even for single-line statements
 		return;
 	}
-		
+
 	if (HasAuthority())
 	{
 		OtherComponent = NewOtherComponent;
