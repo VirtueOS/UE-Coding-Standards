@@ -30,11 +30,11 @@ void ACurrentActor::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLif
 	DOREPLIFETIME_WITH_PARAMS_FAST(ThisClass, OtherComponent, SharedParams);
 }
 
-void ACurrentActor::SetActorHiddenInGame(const bool bNewHidden)
+void ACurrentActor::SetActorHiddenInGame(const bool NewHidden)
 {
-	Super::SetActorHiddenInGame(bNewHidden);
+	Super::SetActorHiddenInGame(NewHidden);
 
-	OnHiddenInGame.Broadcast(this, bNewHidden);
+	OnHiddenInGame.Broadcast(this, NewHidden);
 }
 
 //# [function.useless]
@@ -57,6 +57,8 @@ void ACurrentActor::BeginPlay()
 	Super::BeginPlay();
 	
 	Speed = 1.0f;
+
+	OnHiddenInGame.AddDynamic(this, &ACurrentActor::HandleActorHiddenInGame);
 }
 
 void ACurrentActor::SetOtherComponent(UOtherComponent* NewOtherComponent)

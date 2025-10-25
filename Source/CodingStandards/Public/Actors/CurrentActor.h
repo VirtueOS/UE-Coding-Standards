@@ -41,7 +41,8 @@ class UOtherComponent;
 //# Don't forget to undef it at the bottom of the file
 #define UE_API CODINGSTANDARDS_API
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnHiddenInGame, AActor*, This, bool, bIsHidden);
+//# [basic.delegate] Delegate names should start with On
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnHiddenInGame, AActor*, This, bool, IsHidden);
 
 //# [comment.doxygen] Use /// comments for classes, functions, and variables descriptions to generate Doxygen documentation
 /// ACurrentActor is used as an example of coding standards
@@ -74,7 +75,7 @@ public:
 	//~ Begin AActor
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 	
-	virtual void SetActorHiddenInGame(bool bNewHidden) override;
+	virtual void SetActorHiddenInGame(bool NewHidden) override;
 	//~ End AActor
 
 	//~ Begin UObject
@@ -91,6 +92,10 @@ protected:
 	/// BAD -> Overrides BeginPlay of AActor
 	virtual void BeginPlay() override;
 	//~ End AActor
+	
+	//# [basic.delegate.handler] Delegate Handler function name should start with Handle
+	UFUNCTION()
+	void HandleActorHiddenInGame(AActor* Actor, bool IsHidden) {};
 
 	//# 4. Getters/Setters
 public:
@@ -122,8 +127,8 @@ protected:
 	//# [basic.float] always add .0f
 	float Speed = 0.0f;
 
-	//# [basic.bool] should start with 'b' followed by modal verb (Can, Does, Will, Is, Has, ...)
-	bool bIsInitialized = false;
+	//# [basic.bool] should start with modal verb (Can, Does, Will, Is, Has, ...)
+	bool IsInitialized = false;
 };
 
 //# [header.api] Don't forget to undef!
