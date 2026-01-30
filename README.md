@@ -8,7 +8,7 @@ This documentation is inspired by the [SplashDamage Coding Standards](https://gi
 ## Starting point
 The project includes both C++ and Blueprint standards  
 - For C++ documentation see [CurrentActor.h](https://github.com/VirtueOS/UE-Coding-Standards/blob/main/Source/CodingStandards/Public/Actors/CurrentActor.h)/[cpp](https://github.com/VirtueOS/UE-Coding-Standards/blob/main/Source/CodingStandards/Private/Actors/CurrentActor.cpp)  
-- For BP navigate to [Content/](https://github.com/VirtueOS/UE-Coding-Standards/tree/main/Content) folder of the plugin (or visit [github-pages](https://github.com/VirtueOS/UE-Coding-Standards))
+- For BP navigate to [Content/](https://github.com/VirtueOS/UE-Coding-Standards/tree/main/Content) folder of the plugin (or visit [github-pages](https://virtueos.github.io/UE-Coding-Standards/))
 
 Also there's 
 - [Rider setup guide](https://github.com/VirtueOS/UE-Coding-Standards/tree/main/Settings/Rider)
