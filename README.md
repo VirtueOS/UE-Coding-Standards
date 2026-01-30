@@ -7,8 +7,10 @@ This documentation is inspired by the [SplashDamage Coding Standards](https://gi
 
 ## Starting point
 The project includes both C++ and Blueprint standards  
-- For C++ documentation see [CurrentActor.h](https://github.com/RadYarn/Coding-Standards/blob/main/Source/CodingStandards/Public/Actors/CurrentActor.h)/[cpp](https://github.com/RadYarn/Coding-Standards/blob/main/Source/CodingStandards/Private/Actors/CurrentActor.cpp)  
-- For BP navigate to [Content/](https://github.com/RadYarn/Coding-Standards/tree/main/Content) folder of the plugin
+- For C++ documentation see [CurrentActor.h](https://github.com/VirtueOS/UE-Coding-Standards/blob/main/Source/CodingStandards/Public/Actors/CurrentActor.h)/[cpp](https://github.com/RadYarn/UE-Coding-Standards/blob/main/Source/CodingStandards/Private/Actors/CurrentActor.cpp)  
+- For BP navigate to [Content/](https://github.com/RadYarn/UE-Coding-Standards/tree/main/Content) folder of the plugin
 
-Also there's Settings/ folder with
-- [Rider setup guide](https://github.com/RadYarn/Coding-Standards/tree/main/Settings/Rider)
+Also there's 
+- [Rider setup guide](https://github.com/RadYarn/UE-Coding-Standards/tree/main/Settings/Rider)
+- [.clang_format](https://github.com/VirtueOS/UE-Coding-Standards/blob/main/.clang-format) to enforce proposed standards
+- [.gitignore](https://github.com/VirtueOS/UE-Coding-Standards/blob/main/.gitignore) and [.gitattributes](https://github.com/VirtueOS/UE-Coding-Standards/blob/main/.gitattributes) that can be copied for your project
