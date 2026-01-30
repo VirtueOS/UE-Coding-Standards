@@ -1,9 +1,6 @@
 :root {
-  --bg: #0e0f13;
-  --surface: #15171d;
   --muted: #aab4c2;
   --accent: #4cc9f0;
-  --sky: #38bdf8; /* sky-blue link color */
   --grad-start: #0f1020;
   --grad-end: #1a1a2e;
 }
