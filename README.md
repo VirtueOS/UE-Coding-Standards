@@ -13,4 +13,5 @@ The project includes both C++ and Blueprint standards
 Also there's 
 - [Rider setup guide](https://github.com/VirtueOS/UE-Coding-Standards/tree/main/Settings/Rider)
 - [.clang_format](https://github.com/VirtueOS/UE-Coding-Standards/blob/main/.clang-format) to enforce proposed standards
+- [git hooks](https://github.com/VirtueOS/UE-Coding-Standards/tree/main/Settings/GitHooks) that update submodules / apply clang-format
 - [.gitignore](https://github.com/VirtueOS/UE-Coding-Standards/blob/main/.gitignore) and [.gitattributes](https://github.com/VirtueOS/UE-Coding-Standards/blob/main/.gitattributes) that can be copied for your project
